@@ -1,0 +1,399 @@
+{
+  "mappings": {
+    "frontend-frameworks": {
+      "react": [
+        "cursor/rules-mdc/react.mdc",
+        "cursor/rules-mdc/javascript.mdc",
+        "cursor/rules-mdc/typescript.mdc",
+        "cursor/rules-mdc/html.mdc",
+        "cursor/rules-mdc/css.mdc",
+        "cursor/rules-mdc/axios.mdc",
+        "cursor/rules-mdc/redux.mdc",
+        "cursor/rules-mdc/react-redux.mdc",
+        "cursor/rules-mdc/react-query.mdc",
+        "cursor/rules-mdc/react-mobx.mdc",
+        "cursor/rules-mdc/next-js.mdc",
+        "cursor/rules-mdc/remix.mdc",
+        "cursor/rules-mdc/zustand.mdc",
+        "cursor/rules-mdc/mobx.mdc",
+        "cursor/rules-mdc/vite.mdc",
+        "cursor/rules-mdc/webpack.mdc",
+        "cursor/rules-mdc/trpc.mdc",
+        "cursor/rules-mdc/apollo-client.mdc"
+      ],
+      "vue": [
+        "cursor/rules-mdc/vue.mdc",
+        "cursor/rules-mdc/vue3.mdc",
+        "cursor/rules-mdc/javascript.mdc",
+        "cursor/rules-mdc/typescript.mdc",
+        "cursor/rules-mdc/html.mdc",
+        "cursor/rules-mdc/css.mdc",
+        "cursor/rules-mdc/axios.mdc",
+        "cursor/rules-mdc/vite.mdc",
+        "cursor/rules-mdc/nuxt.mdc",
+        "cursor/rules-mdc/webpack.mdc",
+        "cursor/rules-mdc/pinia.mdc"
+      ],
+      "angular": [
+        "cursor/rules-mdc/angular.mdc",
+        "cursor/rules-mdc/typescript.mdc",
+        "cursor/rules-mdc/html.mdc",
+        "cursor/rules-mdc/css.mdc",
+        "cursor/rules-mdc/rxjs.mdc"
+      ],
+      "svelte": [
+        "cursor/rules-mdc/svelte.mdc",
+        "cursor/rules-mdc/sveltekit.mdc",
+        "cursor/rules-mdc/javascript.mdc",
+        "cursor/rules-mdc/typescript.mdc",
+        "cursor/rules-mdc/html.mdc",
+        "cursor/rules-mdc/css.mdc",
+        "cursor/rules-mdc/vite.mdc"
+      ],
+      "other-frontend": [
+        "cursor/rules-mdc/solidjs.mdc",
+        "cursor/rules-mdc/jquery.mdc",
+        "cursor/rules-mdc/htmx.mdc",
+        "cursor/rules-mdc/qwik.mdc",
+        "cursor/rules-mdc/astro.mdc",
+        "cursor/rules-mdc/bun.mdc",
+        "cursor/rules-mdc/deno.mdc"
+      ]
+    },
+    "frontend-ui": {
+      "ui-components": [
+        "cursor/rules-mdc/material-ui.mdc",
+        "cursor/rules-mdc/ant-design.mdc",
+        "cursor/rules-mdc/chakra-ui.mdc",
+        "cursor/rules-mdc/shadcn.mdc",
+        "cursor/rules-mdc/tailwind.mdc",
+        "cursor/rules-mdc/fontawesome.mdc"
+      ],
+      "visualization": [
+        "cursor/rules-mdc/d3.mdc",
+        "cursor/rules-mdc/three-js.mdc",
+        "cursor/rules-mdc/plotly.mdc",
+        "cursor/rules-mdc/fabric-js.mdc"
+      ]
+    },
+    "backend-languages": {
+      "python": [
+        "cursor/rules-mdc/python.mdc",
+        "cursor/rules-mdc/fastapi.mdc",
+        "cursor/rules-mdc/flask.mdc",
+        "cursor/rules-mdc/flask-restful.mdc",
+        "cursor/rules-mdc/sqlalchemy.mdc",
+        "cursor/rules-mdc/pydantic.mdc",
+        "cursor/rules-mdc/requests.mdc",
+        "cursor/rules-mdc/httpx.mdc",
+        "cursor/rules-mdc/aiohttp.mdc",
+        "cursor/rules-mdc/asyncio.mdc",
+        "cursor/rules-mdc/tornado.mdc",
+        "cursor/rules-mdc/pyramid.mdc",
+        "cursor/rules-mdc/bottle.mdc",
+        "cursor/rules-mdc/sanic.mdc",
+        "cursor/rules-mdc/peewee.mdc",
+        "cursor/rules-mdc/tortoise-orm.mdc",
+        "cursor/rules-mdc/django-orm.mdc",
+        "cursor/rules-mdc/pony.mdc",
+        "cursor/rules-mdc/django.mdc",
+        "cursor/rules-mdc/django-rest-framework.mdc",
+        "cursor/rules-mdc/typer.mdc",
+        "cursor/rules-mdc/click.mdc",
+        "cursor/rules-mdc/anyio.mdc",
+        "cursor/rules-mdc/trio.mdc",
+        "cursor/rules-mdc/rich.mdc",
+        "cursor/rules-mdc/tqdm.mdc",
+        "cursor/rules-mdc/streamlit.mdc",
+        "cursor/rules-mdc/scrapy.mdc",
+        "cursor/rules-mdc/beautifulsoup4.mdc"
+      ],
+      "go": [
+        "cursor/rules-mdc/go.mdc",
+        "cursor/rules-mdc/gin.mdc",
+        "cursor/rules-mdc/echo.mdc",
+        "cursor/rules-mdc/fiber.mdc",
+        "cursor/rules-mdc/gorm.mdc",
+        "cursor/rules-mdc/servemux.mdc"
+      ],
+      "rust": [
+        "cursor/rules-mdc/rust.mdc",
+        "cursor/rules-mdc/actix-web.mdc",
+        "cursor/rules-mdc/tokio.mdc",
+        "cursor/rules-mdc/rocket.mdc",
+        "cursor/rules-mdc/diesel.mdc"
+      ],
+      "java": [
+        "cursor/rules-mdc/java.mdc",
+        "cursor/rules-mdc/spring.mdc",
+        "cursor/rules-mdc/springboot.mdc",
+        "cursor/rules-mdc/spring-boot.mdc",
+        "cursor/rules-mdc/hibernate.mdc",
+        "cursor/rules-mdc/junit.mdc",
+        "cursor/rules-mdc/mockito.mdc",
+        "cursor/rules-mdc/maven.mdc",
+        "cursor/rules-mdc/gradle.mdc"
+      ],
+      "node": [
+        "cursor/rules-mdc/node.mdc",
+        "cursor/rules-mdc/express.mdc",
+        "cursor/rules-mdc/nestjs.mdc",
+        "cursor/rules-mdc/sequelize.mdc",
+        "cursor/rules-mdc/mongoose.mdc",
+        "cursor/rules-mdc/prisma.mdc",
+        "cursor/rules-mdc/drizzle.mdc",
+        "cursor/rules-mdc/socket-io.mdc",
+        "cursor/rules-mdc/jest.mdc",
+        "cursor/rules-mdc/vitest.mdc",
+        "cursor/rules-mdc/eslint.mdc",
+        "cursor/rules-mdc/zod.mdc",
+        "cursor/rules-mdc/apollo-graphql.mdc",
+        "cursor/rules-mdc/graphql.mdc",
+        "cursor/rules-mdc/langchain-js.mdc",
+        "cursor/rules-mdc/llamaindex-js.mdc",
+        "cursor/rules-mdc/hardhat.mdc",
+        "cursor/rules-mdc/cheerio.mdc"
+      ],
+      "other-backend": [
+        "cursor/rules-mdc/php.mdc",
+        "cursor/rules-mdc/laravel.mdc",
+        "cursor/rules-mdc/guzzle.mdc",
+        "cursor/rules-mdc/ruby.mdc",
+        "cursor/rules-mdc/c-sharp.mdc",
+        "cursor/rules-mdc/asp-net.mdc",
+        "cursor/rules-mdc/phoenix.mdc",
+        "cursor/rules-mdc/solidity.mdc",
+        "cursor/rules-mdc/bash.mdc",
+        "cursor/rules-mdc/zsh.mdc"
+      ]
+    },
+    "databases": {
+      "sql": [
+        "cursor/rules-mdc/sql.mdc",
+        "cursor/rules-mdc/postgresql.mdc",
+        "cursor/rules-mdc/mysql.mdc",
+        "cursor/rules-mdc/sqlite.mdc"
+      ],
+      "nosql": [
+        "cursor/rules-mdc/mongodb.mdc",
+        "cursor/rules-mdc/redis.mdc",
+        "cursor/rules-mdc/elasticsearch.mdc",
+        "cursor/rules-mdc/neo4j.mdc",
+        "cursor/rules-mdc/duckdb.mdc"
+      ]
+    },
+    "mobile": {
+      "react-native": [
+        "cursor/rules-mdc/react-native.mdc",
+        "cursor/rules-mdc/javascript.mdc",
+        "cursor/rules-mdc/typescript.mdc",
+        "cursor/rules-mdc/expo.mdc",
+        "cursor/rules-mdc/detox.mdc"
+      ],
+      "flutter": [
+        "cursor/rules-mdc/flutter.mdc",
+        "cursor/rules-mdc/dart.mdc",
+        "cursor/rules-mdc/riverpod.mdc"
+      ],
+      "other-mobile": [
+        "cursor/rules-mdc/ionic.mdc",
+        "cursor/rules-mdc/android-sdk.mdc",
+        "cursor/rules-mdc/jetpack-compose.mdc",
+        "cursor/rules-mdc/kotlin.mdc"
+      ]
+    },
+    "devops": {
+      "containerization": [
+        "cursor/rules-mdc/docker.mdc",
+        "cursor/rules-mdc/docker-compose.mdc",
+        "cursor/rules-mdc/kubernetes.mdc",
+        "cursor/rules-mdc/helm.mdc"
+      ],
+      "ci-cd": [
+        "cursor/rules-mdc/github-actions.mdc",
+        "cursor/rules-mdc/jenkins.mdc",
+        "cursor/rules-mdc/gitlab-ci.mdc",
+        "cursor/rules-mdc/circleci.mdc",
+        "cursor/rules-mdc/azure-pipelines.mdc"
+      ],
+      "configuration-management": [
+        "cursor/rules-mdc/terraform.mdc",
+        "cursor/rules-mdc/ansible.mdc",
+        "cursor/rules-mdc/git.mdc"
+      ],
+      "service-deployment": [
+        "cursor/rules-mdc/nginx.mdc",
+        "cursor/rules-mdc/vercel.mdc",
+        "cursor/rules-mdc/heroku.mdc",
+        "cursor/rules-mdc/netlify.mdc",
+        "cursor/rules-mdc/railway.mdc",
+        "cursor/rules-mdc/cloudflare.mdc"
+      ]
+    },
+    "cloud-services": {
+      "aws": [
+        "cursor/rules-mdc/aws.mdc",
+        "cursor/rules-mdc/aws-cli.mdc",
+        "cursor/rules-mdc/amazon-ec2.mdc",
+        "cursor/rules-mdc/amazon-s3.mdc",
+        "cursor/rules-mdc/aws-lambda.mdc",
+        "cursor/rules-mdc/aws-ecs.mdc",
+        "cursor/rules-mdc/aws-rds.mdc",
+        "cursor/rules-mdc/aws-dynamodb.mdc",
+        "cursor/rules-mdc/aws-amplify.mdc",
+        "cursor/rules-mdc/boto3.mdc"
+      ],
+      "gcp": ["cursor/rules-mdc/gcp.mdc", "cursor/rules-mdc/gcp-cli.mdc"],
+      "azure": ["cursor/rules-mdc/azure.mdc"],
+      "other-cloud": [
+        "cursor/rules-mdc/digitalocean.mdc",
+        "cursor/rules-mdc/firebase.mdc",
+        "cursor/rules-mdc/supabase.mdc"
+      ]
+    },
+    "ai-ml": {
+      "machine-learning": [
+        "cursor/rules-mdc/tensorflow.mdc",
+        "cursor/rules-mdc/pytorch.mdc",
+        "cursor/rules-mdc/scikit-learn.mdc",
+        "cursor/rules-mdc/keras.mdc",
+        "cursor/rules-mdc/xgboost.mdc",
+        "cursor/rules-mdc/lightgbm.mdc",
+        "cursor/rules-mdc/huggingface.mdc",
+        "cursor/rules-mdc/transformers.mdc",
+        "cursor/rules-mdc/mlx.mdc",
+        "cursor/rules-mdc/jax.mdc",
+        "cursor/rules-mdc/vllm.mdc",
+        "cursor/rules-mdc/tinygrad.mdc"
+      ],
+      "ai-agents": [
+        "cursor/rules-mdc/langchain.mdc",
+        "cursor/rules-mdc/llama-index.mdc",
+        "cursor/rules-mdc/autogen.mdc",
+        "cursor/rules-mdc/crewai.mdc",
+        "cursor/rules-mdc/langgraph.mdc",
+        "cursor/rules-mdc/smolagents.mdc",
+        "cursor/rules-mdc/openai.mdc",
+        "cursor/rules-mdc/modal.mdc"
+      ],
+      "data-science": [
+        "cursor/rules-mdc/numpy.mdc",
+        "cursor/rules-mdc/pandas.mdc",
+        "cursor/rules-mdc/matplotlib.mdc",
+        "cursor/rules-mdc/seaborn.mdc",
+        "cursor/rules-mdc/plotly.mdc",
+        "cursor/rules-mdc/scipy.mdc",
+        "cursor/rules-mdc/statsmodels.mdc",
+        "cursor/rules-mdc/dask.mdc",
+        "cursor/rules-mdc/numba.mdc"
+      ],
+      "nlp": [
+        "cursor/rules-mdc/nltk.mdc",
+        "cursor/rules-mdc/spacy.mdc",
+        "cursor/rules-mdc/gensim.mdc"
+      ],
+      "computer-vision": [
+        "cursor/rules-mdc/opencv-python.mdc",
+        "cursor/rules-mdc/pillow.mdc",
+        "cursor/rules-mdc/scikit-image.mdc"
+      ]
+    },
+    "testing": {
+      "testing-frameworks": [
+        "cursor/rules-mdc/pytest.mdc",
+        "cursor/rules-mdc/jest.mdc",
+        "cursor/rules-mdc/cypress.mdc",
+        "cursor/rules-mdc/selenium.mdc",
+        "cursor/rules-mdc/playwright.mdc",
+        "cursor/rules-mdc/unittest.mdc",
+        "cursor/rules-mdc/nose2.mdc",
+        "cursor/rules-mdc/hypothesis.mdc",
+        "cursor/rules-mdc/behave.mdc",
+        "cursor/rules-mdc/junit.mdc",
+        "cursor/rules-mdc/puppeteer.mdc",
+        "cursor/rules-mdc/vitest.mdc"
+      ],
+      "code-quality": [
+        "cursor/rules-mdc/pylint.mdc",
+        "cursor/rules-mdc/flake8.mdc",
+        "cursor/rules-mdc/mypy.mdc",
+        "cursor/rules-mdc/pyright.mdc",
+        "cursor/rules-mdc/black.mdc",
+        "cursor/rules-mdc/isort.mdc",
+        "cursor/rules-mdc/eslint.mdc"
+      ],
+      "api-testing": [
+        "cursor/rules-mdc/postman.mdc",
+        "cursor/rules-mdc/insomnia.mdc"
+      ]
+    },
+    "utility-libraries": {
+      "auth-security": [
+        "cursor/rules-mdc/auth0.mdc",
+        "cursor/rules-mdc/clerk.mdc",
+        "cursor/rules-mdc/stripe.mdc",
+        "cursor/rules-mdc/sentry.mdc"
+      ],
+      "api-integration": [
+        "cursor/rules-mdc/discord-api.mdc",
+        "cursor/rules-mdc/google-maps-js.mdc",
+        "cursor/rules-mdc/notion-api.mdc",
+        "cursor/rules-mdc/microsoft-teams.mdc"
+      ],
+      "documentation": [
+        "cursor/rules-mdc/sphinx.mdc",
+        "cursor/rules-mdc/pdoc.mdc",
+        "cursor/rules-mdc/mkdocs.mdc",
+        "cursor/rules-mdc/setuptools.mdc"
+      ],
+      "monitoring": [
+        "cursor/rules-mdc/datadog.mdc",
+        "cursor/rules-mdc/grafana.mdc",
+        "cursor/rules-mdc/elk-stack.mdc"
+      ]
+    },
+    "desktop-apps": {
+      "cross-platform": [
+        "cursor/rules-mdc/electron.mdc",
+        "cursor/rules-mdc/tauri.mdc"
+      ],
+      "gui-frameworks": [
+        "cursor/rules-mdc/tkinter.mdc",
+        "cursor/rules-mdc/customtkinter.mdc",
+        "cursor/rules-mdc/pyqt.mdc",
+        "cursor/rules-mdc/pyside.mdc",
+        "cursor/rules-mdc/kivy.mdc"
+      ]
+    },
+    "game-development": {
+      "game-engines": [
+        "cursor/rules-mdc/unity.mdc",
+        "cursor/rules-mdc/unreal-engine.mdc",
+        "cursor/rules-mdc/godot.mdc",
+        "cursor/rules-mdc/pygame.mdc"
+      ],
+      "game-related": [
+        "cursor/rules-mdc/ros.mdc",
+        "cursor/rules-mdc/llvm.mdc",
+        "cursor/rules-mdc/cuda.mdc",
+        "cursor/rules-mdc/ffmpeg.mdc"
+      ]
+    },
+    "editors": {
+      "code-editors": [
+        "cursor/rules-mdc/vim.mdc",
+        "cursor/rules-mdc/emacs.mdc",
+        "cursor/rules-mdc/codemirror.mdc"
+      ]
+    },
+    "build-tools": {
+      "bundlers": [
+        "cursor/rules-mdc/webpack.mdc",
+        "cursor/rules-mdc/vite.mdc",
+        "cursor/rules-mdc/turbopack.mdc",
+        "cursor/rules-mdc/esbuild.mdc"
+      ],
+      "dependency-management": ["cursor/rules-mdc/poetry.mdc"]
+    }
+  }
+}
