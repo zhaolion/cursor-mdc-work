@@ -12,6 +12,8 @@
 - 使用配置文件定义映射关系
 - 按字母顺序排序输出结果
 - 内置默认配置文件（无需外部配置文件即可使用）
+- 自动创建 .cursor 目录以确保与 Cursor 兼容
+- 默认目标为当前目录
 
 ## 使用方法
 
@@ -53,29 +55,38 @@ cursor-mdc-work list
 cursor-mdc-work list --category backend-languages
 ```
 
-3. 拷贝特定分类下特定类型的规则文件：
+3. 拷贝特定分类下特定类型的规则文件到当前目录：
 
 ```bash
-cursor-mdc-work copy --category backend-languages --types python,go --target /path/to/destination
+cursor-mdc-work copy --category backend-languages --types python,go
 ```
 
-4. 拷贝特定分类下所有规则文件：
+4. 拷贝特定分类下所有规则文件到指定目录：
 
 ```bash
 cursor-mdc-work copy --category backend-languages --target /path/to/destination
 ```
 
-5. 拷贝所有规则文件：
+5. 拷贝所有规则文件到当前目录：
 
 ```bash
-cursor-mdc-work copy --target /path/to/destination
+cursor-mdc-work copy
 ```
 
 6. 使用自定义配置文件：
 
 ```bash
-cursor-mdc-work copy --config my-mapping.json --target /path/to/destination
+cursor-mdc-work copy --config my-mapping.json
 ```
+
+### 自动创建 .cursor 目录
+
+拷贝文件时，工具会自动检查目标路径是否包含 `.cursor` 目录：
+
+- 如果路径中已经包含 `.cursor`，文件将直接复制到该位置
+- 如果没有包含，工具会在目标路径中创建一个新的 `.cursor` 目录，并将文件复制到那里
+
+这确保了与 Cursor 的预期配置结构兼容。
 
 ## 配置文件格式
 

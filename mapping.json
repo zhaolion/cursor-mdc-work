@@ -3,9 +3,7 @@
     "frontend-frameworks": {
       "react": [
         "cursor/rules-mdc/react.mdc",
-        "cursor/rules-mdc/javascript.mdc",
         "cursor/rules-mdc/typescript.mdc",
-        "cursor/rules-mdc/html.mdc",
         "cursor/rules-mdc/css.mdc",
         "cursor/rules-mdc/axios.mdc",
         "cursor/rules-mdc/redux.mdc",
@@ -24,29 +22,22 @@
       "vue": [
         "cursor/rules-mdc/vue.mdc",
         "cursor/rules-mdc/vue3.mdc",
-        "cursor/rules-mdc/javascript.mdc",
         "cursor/rules-mdc/typescript.mdc",
-        "cursor/rules-mdc/html.mdc",
         "cursor/rules-mdc/css.mdc",
         "cursor/rules-mdc/axios.mdc",
         "cursor/rules-mdc/vite.mdc",
         "cursor/rules-mdc/nuxt.mdc",
-        "cursor/rules-mdc/webpack.mdc",
-        "cursor/rules-mdc/pinia.mdc"
+        "cursor/rules-mdc/webpack.mdc"
       ],
       "angular": [
         "cursor/rules-mdc/angular.mdc",
         "cursor/rules-mdc/typescript.mdc",
-        "cursor/rules-mdc/html.mdc",
-        "cursor/rules-mdc/css.mdc",
-        "cursor/rules-mdc/rxjs.mdc"
+        "cursor/rules-mdc/css.mdc"
       ],
       "svelte": [
         "cursor/rules-mdc/svelte.mdc",
         "cursor/rules-mdc/sveltekit.mdc",
-        "cursor/rules-mdc/javascript.mdc",
         "cursor/rules-mdc/typescript.mdc",
-        "cursor/rules-mdc/html.mdc",
         "cursor/rules-mdc/css.mdc",
         "cursor/rules-mdc/vite.mdc"
       ],
@@ -110,36 +101,26 @@
       ],
       "go": [
         "cursor/rules-mdc/go.mdc",
-        "cursor/rules-mdc/gin.mdc",
-        "cursor/rules-mdc/echo.mdc",
         "cursor/rules-mdc/fiber.mdc",
-        "cursor/rules-mdc/gorm.mdc",
         "cursor/rules-mdc/servemux.mdc"
       ],
       "rust": [
         "cursor/rules-mdc/rust.mdc",
         "cursor/rules-mdc/actix-web.mdc",
-        "cursor/rules-mdc/tokio.mdc",
-        "cursor/rules-mdc/rocket.mdc",
-        "cursor/rules-mdc/diesel.mdc"
+        "cursor/rules-mdc/rocket.mdc"
       ],
       "java": [
         "cursor/rules-mdc/java.mdc",
         "cursor/rules-mdc/spring.mdc",
         "cursor/rules-mdc/springboot.mdc",
-        "cursor/rules-mdc/spring-boot.mdc",
-        "cursor/rules-mdc/hibernate.mdc",
         "cursor/rules-mdc/junit.mdc",
         "cursor/rules-mdc/mockito.mdc",
         "cursor/rules-mdc/maven.mdc",
         "cursor/rules-mdc/gradle.mdc"
       ],
       "node": [
-        "cursor/rules-mdc/node.mdc",
         "cursor/rules-mdc/express.mdc",
         "cursor/rules-mdc/nestjs.mdc",
-        "cursor/rules-mdc/sequelize.mdc",
-        "cursor/rules-mdc/mongoose.mdc",
         "cursor/rules-mdc/prisma.mdc",
         "cursor/rules-mdc/drizzle.mdc",
         "cursor/rules-mdc/socket-io.mdc",
@@ -168,12 +149,7 @@
       ]
     },
     "databases": {
-      "sql": [
-        "cursor/rules-mdc/sql.mdc",
-        "cursor/rules-mdc/postgresql.mdc",
-        "cursor/rules-mdc/mysql.mdc",
-        "cursor/rules-mdc/sqlite.mdc"
-      ],
+      "sql": ["cursor/rules-mdc/postgresql.mdc", "cursor/rules-mdc/sqlite.mdc"],
       "nosql": [
         "cursor/rules-mdc/mongodb.mdc",
         "cursor/rules-mdc/redis.mdc",
@@ -185,29 +161,24 @@
     "mobile": {
       "react-native": [
         "cursor/rules-mdc/react-native.mdc",
-        "cursor/rules-mdc/javascript.mdc",
         "cursor/rules-mdc/typescript.mdc",
         "cursor/rules-mdc/expo.mdc",
         "cursor/rules-mdc/detox.mdc"
       ],
       "flutter": [
         "cursor/rules-mdc/flutter.mdc",
-        "cursor/rules-mdc/dart.mdc",
         "cursor/rules-mdc/riverpod.mdc"
       ],
       "other-mobile": [
         "cursor/rules-mdc/ionic.mdc",
         "cursor/rules-mdc/android-sdk.mdc",
-        "cursor/rules-mdc/jetpack-compose.mdc",
-        "cursor/rules-mdc/kotlin.mdc"
+        "cursor/rules-mdc/jetpack-compose.mdc"
       ]
     },
     "devops": {
       "containerization": [
         "cursor/rules-mdc/docker.mdc",
-        "cursor/rules-mdc/docker-compose.mdc",
-        "cursor/rules-mdc/kubernetes.mdc",
-        "cursor/rules-mdc/helm.mdc"
+        "cursor/rules-mdc/kubernetes.mdc"
       ],
       "ci-cd": [
         "cursor/rules-mdc/github-actions.mdc",

@@ -14,6 +14,8 @@ This project generates Cursor MDC (Markdown Cursor) rule files from a structured
 - Uses configuration files to define mapping relationships
 - Alphabetically sorted output
 - Embedded default configuration (no need for external config files)
+- Automatic .cursor directory creation for Cursor compatibility
+- Default target is the current directory
 
 ## Usage
 
@@ -55,29 +57,38 @@ cursor-mdc-work list
 cursor-mdc-work list --category backend-languages
 ```
 
-3. Copy specific types of rule files:
+3. Copy specific types of rule files to the current directory:
 
 ```bash
-cursor-mdc-work copy --category backend-languages --types python,go --target /path/to/destination
+cursor-mdc-work copy --category backend-languages --types python,go
 ```
 
-4. Copy all rule files in a specific category:
+4. Copy all rule files in a specific category to a specified directory:
 
 ```bash
 cursor-mdc-work copy --category backend-languages --target /path/to/destination
 ```
 
-5. Copy all rule files:
+5. Copy all rule files to the current directory:
 
 ```bash
-cursor-mdc-work copy --target /path/to/destination
+cursor-mdc-work copy
 ```
 
 6. Use a custom configuration file:
 
 ```bash
-cursor-mdc-work copy --config my-mapping.json --target /path/to/destination
+cursor-mdc-work copy --config my-mapping.json
 ```
+
+### Automatic .cursor Directory
+
+When copying files, the tool will automatically check if the target path contains a `.cursor` directory:
+
+- If the path already includes `.cursor`, files will be copied directly to that location
+- If not, a new `.cursor` directory will be created within the target path, and files will be copied there
+
+This ensures compatibility with Cursor's expected configuration structure.
 
 ## Configuration File Format
 

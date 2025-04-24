@@ -1,0 +1,1 @@
+识别规则过于简单了，里面是混合了编程语言和框架的，前端的需要分类组合，例如 react 需要关联 ts/js/axios/react/html/css 、vue 需要关联 ts/js/axios ，后端的可以按照语言聚合，python 聚合 python / fastapi ，rust 聚合 actix-web / rust 。不要只局限于我举的例子，你需要充分的思考 cursor/rules-mdc 目录的文件名是什么语言、前端还是后端，然后仔细分类好

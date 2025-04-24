@@ -8,11 +8,13 @@ import (
 	"os"
 	"path/filepath"
 	"sort"
+	"strings"
 
 	"github.com/spf13/cobra"
 )
 
 //go:embed mapping.json
+//go:embed cursor/rules-mdc/*.mdc
 var embeddedFiles embed.FS
 
 // MappingConfig - Nested structure to support categorization
@@ -27,6 +29,42 @@ var (
 	ruleTypes    []string
 	ruleCategory string
 )
+
+// prepareCursorDirectory ensures the target directory contains a .cursor subdirectory
+// Returns the final path where files should be copied
+func prepareCursorDirectory(targetDir string) (string, error) {
+	// 将目标路径转换为绝对路径
+	absTargetDir, err := filepath.Abs(targetDir)
+	if err != nil {
+		return "", fmt.Errorf("failed to get absolute path: %v", err)
+	}
+
+	// 检查路径中是否包含 .cursor 目录
+	pathParts := strings.Split(absTargetDir, string(os.PathSeparator))
+	for _, part := range pathParts {
+		if part == ".cursor" {
+			fmt.Println("Using existing .cursor directory in the target path")
+			return targetDir, nil
+		}
+	}
+
+	// 检查目标路径下是否已经存在 .cursor 目录
+	cursorDir := filepath.Join(absTargetDir, ".cursor")
+	if _, err := os.Stat(cursorDir); err == nil {
+		fmt.Printf("Using existing .cursor directory at %s\n", cursorDir)
+		return cursorDir, nil
+	}
+
+	// 创建一个 .cursor 目录
+	fmt.Printf("Creating .cursor directory at %s\n", cursorDir)
+	
+	err = os.MkdirAll(cursorDir, 0755)
+	if err != nil {
+		return "", fmt.Errorf("failed to create .cursor directory: %v", err)
+	}
+	
+	return cursorDir, nil
+}
 
 func main() {
 	// Create root command
@@ -113,15 +151,20 @@ func main() {
 		Use:   "copy",
 		Short: "Copy rule files to target directory",
 		PreRunE: func(cmd *cobra.Command, args []string) error {
-			if targetDir == "" {
-				return fmt.Errorf("error: Please specify a target directory (--target)")
-			}
+			// No need to check if targetDir is empty since it defaults to current directory
 			return nil
 		},
 		Run: func(cmd *cobra.Command, args []string) {
 			config, err := loadConfig(configFile)
 			if err != nil {
 				fmt.Printf("Failed to load configuration file: %v\n", err)
+				os.Exit(1)
+			}
+
+			// Prepare the target directory with .cursor subdirectory if needed
+			finalTargetDir, err := prepareCursorDirectory(targetDir)
+			if err != nil {
+				fmt.Printf("Error preparing target directory: %v\n", err)
 				os.Exit(1)
 			}
 
@@ -158,9 +201,9 @@ func main() {
 						typesFound = true
 						// Copy files of the specified type
 						for _, path := range filePaths {
-							copyFile(path, targetDir)
+							copyEmbeddedFile(path, finalTargetDir)
 						}
-						fmt.Printf("Successfully copied rules for %s / %s to %s\n", ruleCategory, ruleType, targetDir)
+						fmt.Printf("Successfully copied rules for %s / %s to %s\n", ruleCategory, ruleType, finalTargetDir)
 					}
 
 					if !typesFound {
@@ -171,9 +214,9 @@ func main() {
 					// Copy all types in the category
 					for ruleType, filePaths := range categoryMap {
 						for _, path := range filePaths {
-							copyFile(path, targetDir)
+							copyEmbeddedFile(path, finalTargetDir)
 						}
-						fmt.Printf("Successfully copied rules for %s / %s to %s\n", ruleCategory, ruleType, targetDir)
+						fmt.Printf("Successfully copied rules for %s / %s to %s\n", ruleCategory, ruleType, finalTargetDir)
 					}
 				}
 			} else if len(ruleTypes) > 0 {
@@ -185,9 +228,9 @@ func main() {
 							typesFound = true
 							// Copy files of the specified type
 							for _, path := range filePaths {
-								copyFile(path, targetDir)
+								copyEmbeddedFile(path, finalTargetDir)
 							}
-							fmt.Printf("Successfully copied rules for %s / %s to %s\n", category, requestedType, targetDir)
+							fmt.Printf("Successfully copied rules for %s / %s to %s\n", category, requestedType, finalTargetDir)
 						}
 					}
 				}
@@ -201,12 +244,12 @@ func main() {
 				for category, categoryMap := range config.Mappings {
 					for ruleType, filePaths := range categoryMap {
 						for _, path := range filePaths {
-							copyFile(path, targetDir)
+							copyEmbeddedFile(path, finalTargetDir)
 						}
-						fmt.Printf("Successfully copied rules for %s / %s to %s\n", category, ruleType, targetDir)
+						fmt.Printf("Successfully copied rules for %s / %s to %s\n", category, ruleType, finalTargetDir)
 					}
 				}
-				fmt.Printf("Successfully copied all rule files to %s\n", targetDir)
+				fmt.Printf("Successfully copied all rule files to %s\n", finalTargetDir)
 			}
 		},
 	}
@@ -218,7 +261,7 @@ func main() {
 	listCmd.Flags().StringVar(&ruleCategory, "category", "", "Specify rule category to list")
 
 	// Set copy command flags
-	copyCmd.Flags().StringVar(&targetDir, "target", "", "Target directory path")
+	copyCmd.Flags().StringVar(&targetDir, "target", ".", "Target directory path (default: current directory)")
 	copyCmd.Flags().StringSliceVar(&ruleTypes, "types", []string{}, "Rule types to copy, can specify multiple (e.g.: --types=python,javascript)")
 	copyCmd.Flags().StringVar(&ruleCategory, "category", "", "Specify rule category to copy")
 
@@ -304,7 +347,39 @@ func loadConfig(filePath string) (*MappingConfig, error) {
 	return &config, nil
 }
 
-// Copy file to target directory
+// Copy embedded file to target directory
+func copyEmbeddedFile(sourcePath, targetDir string) {
+	// Get source file name
+	fileName := filepath.Base(sourcePath)
+	
+	// Build target file path
+	targetPath := filepath.Join(targetDir, fileName)
+	
+	// Create target directory (if it doesn't exist)
+	err := os.MkdirAll(targetDir, 0755)
+	if err != nil {
+		fmt.Printf("Failed to create target directory: %v\n", err)
+		return
+	}
+	
+	// Read from embedded file system
+	data, err := embeddedFiles.ReadFile(sourcePath)
+	if err != nil {
+		fmt.Printf("Failed to read embedded file %s: %v\n", sourcePath, err)
+		return
+	}
+	
+	// Create target file
+	err = os.WriteFile(targetPath, data, 0644)
+	if err != nil {
+		fmt.Printf("Failed to create target file %s: %v\n", targetPath, err)
+		return
+	}
+	
+	fmt.Printf("Copied: %s -> %s\n", sourcePath, targetPath)
+}
+
+// Legacy copy function for external files (not used anymore)
 func copyFile(sourcePath, targetDir string) {
 	// Get source file name
 	fileName := filepath.Base(sourcePath)
